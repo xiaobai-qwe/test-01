@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 5px;
+            width: 200px;
+        }
+
+        .search-container button {
+            padding: 5px 10px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #f4f4f4;
+        }
+
+        .content {
+            width: 80%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        article {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>我的博客</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </nav>
+    <div class="search-container">
+        <input type="text" placeholder="搜索...">
+        <button>搜索</button>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" onclick="showContent('content1')">第一篇博客：探索未知的世界</a></li>
+                <li><a href="#" onclick="showContent('content2')">第二篇博客：生活中的小美好</a></li>
+            </ul>
+        </div>
+        <div class="content" id="content1">
+            <article>
+                <h2>第一篇博客：探索未知的世界</h2>
+                <p>在这个充满无限可能的世界里，我们总是渴望去探索那些未知的领域。每一次的冒险都是一次成长，每一次的发现都是一次心灵的触动。</p>
+                <p>从广袤的大自然到深邃的人类思想，从古老的历史遗迹到前沿的科技发展，我们不断地追寻着知识和真理。</p>
+            </article>
+        </div>
+        <div class="content" id="content2" style="display:none;">
+            <article>
+                <h2>第二篇博客：生活中的小美好</h2>
+                <p>生活中并不缺少美，而是缺少发现美的眼睛。有时候，那些小小的美好瞬间就能给我们带来无尽的温暖和幸福。</p>
+                <p>比如清晨的第一缕阳光、路边绽放的花朵、朋友的一个微笑或者一本好书。让我们用心去感受生活中的这些小美好，珍惜每一个当下。</p>
+            </article>
+        </div>
+    </div>
+    <script>
+        function showContent(contentId) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
